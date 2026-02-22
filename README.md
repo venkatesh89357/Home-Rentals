@@ -1,3 +1,7 @@
+## 🚀 Project is Live At Below Link
+- 🌐 Frontend (Netlify): https://homerentals.netlify.app/
+
+
 # MERN Home Rentals Documentation Index
 
 Welcome to the MERN Home Rentals project! This document serves as a roadmap to all available documentation.
