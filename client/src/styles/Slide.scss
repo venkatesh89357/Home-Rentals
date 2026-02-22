@@ -1,0 +1,38 @@
+.slide {
+    width: 100vw;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: background-image 1s ease-in-out;
+  
+    h1 {
+      padding: 40px 20px;
+      font-size: 48px;
+      text-align: center;
+      color: white;
+      text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8);
+      font-weight: 700;
+      letter-spacing: 1px;
+      z-index: 2;
+      max-width: 900px;
+      line-height: 1.4;
+      animation: slideTextFade 1s ease-in-out;
+    }
+  
+    @keyframes slideTextFade {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
