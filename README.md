@@ -1,6 +1,6 @@
 ## 🚀 Project is Live At Below Link
 - 🌐 Frontend (Netlify): https://homerentals.netlify.app/
-
+- 🔗 Backend API (Render): https://home-rentals-un60.onrender.com
 
 # MERN Home Rentals Documentation Index
 
