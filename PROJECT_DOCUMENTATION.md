@@ -163,9 +163,4 @@ Where I saved this document
 ---------------------------
 Project root: `d:/MERN-Home-Rentals/PROJECT_DOCUMENTATION.md`
 
-If you want I can:
-- commit these changes and create a small CHANGELOG.md entry.
-- fully namespace SCSS `@use` imports and refactor variable usages.
-- generate a shorter README.md for repo root and keep this long doc in `docs/`.
 
-Which of the above would you like next? (commit, namespace SCSS, add CHANGELOG, or generate smaller README)
