@@ -5,6 +5,7 @@ import { useSelector,useDispatch  } from "react-redux";
 import { setListings } from "../redux/state";
 import Loader from "../components/Loader"
 import ListingCard from "../components/ListingCard";
+import { API_URL } from "../config/api";
 
 const SearchPage = () => {
 
@@ -16,7 +17,7 @@ const SearchPage = () => {
 
   const getSearchListings = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/properties/search/${search}`, {
+      const response = await fetch(`${API_URL}/properties/search/${search}`, {
         method: "GET"
       })
 

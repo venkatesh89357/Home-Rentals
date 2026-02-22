@@ -7,6 +7,7 @@ import ListingCard from "../components/ListingCard";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setListings } from "../redux/state";
+import { API_URL } from "../config/api";
 
 const CategoryPage = () => {
 
@@ -21,7 +22,7 @@ const CategoryPage = () => {
     try {
 
       const response = await fetch(
-          `http://localhost:8000/properties?category=${category}`,
+          `${API_URL}/properties?category=${category}`,
         {
           method: "GET",
         }

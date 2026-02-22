@@ -4,6 +4,7 @@ import Loader from "../components/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { setTripList } from "../redux/state";
 import ListingCard from "../components/ListingCard";
+import { API_URL } from "../config/api";
 
 const TripList = () => {
 
@@ -16,7 +17,7 @@ const TripList = () => {
   const getTripList = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8000/users/${userId}/trips`,
+        `${API_URL}/users/${userId}/trips`,
         {
           method: "GET",
         }

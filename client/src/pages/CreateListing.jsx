@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import { BiTrash } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config/api";
 
 const CreateListing = () => {
   const [category, setCategory] = useState("");
@@ -227,7 +228,7 @@ const CreateListing = () => {
         listingForm.append("listingPhotos", photo);
       });
 
-      const response = await fetch("http://localhost:8000/properties/create", {
+      const response = await fetch(`${API_URL}/properties/create`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

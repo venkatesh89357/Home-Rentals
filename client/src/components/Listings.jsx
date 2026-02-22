@@ -5,6 +5,7 @@ import { categories } from "../data.jsx";
 
 import ListingCard from "./ListingCard";
 import Loader from "./Loader";
+import { API_URL } from "../config/api";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setListings } from "../redux/state";
@@ -21,8 +22,8 @@ const Listings = () => {
     try {
       const response = await fetch(
         selectedCategory !== "All"
-          ? `http://localhost:8000/properties?category=${selectedCategory}`
-          : "http://localhost:8000/properties",
+          ? `${API_URL}/properties?category=${selectedCategory}`
+          : `${API_URL}/properties`,
         {
           method: "GET",
         }

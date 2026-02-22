@@ -15,11 +15,23 @@ const bookingRoutes = require("./routes/booking.js")
 const userRoutes = require("./routes/user.js")
 
 
-// Allow dev client origins (5173/5174) during development
+// CORS configuration for production
 const corsOptions = {
   origin: (origin, cb) => {
-    // allow requests with no origin (like curl, Postman) and allow local dev origins
-    cb(null, true);
+    // Allow requests from Vercel, localhost (dev), and requests with no origin
+    const allowedOrigins = [
+      process.env.FRONTEND_URL || 'https://vercel.app',
+      'http://localhost:5173',
+      'http://localhost:5174',
+      'http://localhost:3000'
+    ];
+    
+    // Allow requests from any origin in development, or from allowed origins in production
+    if (!origin || allowedOrigins.some(allowed => origin.includes(allowed)) || process.env.NODE_ENV !== 'production') {
+      cb(null, true);
+    } else {
+      cb(null, true); // For now, allow all CORS in production. Update allowedOrigins to be more restrictive if needed.
+    }
   },
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,

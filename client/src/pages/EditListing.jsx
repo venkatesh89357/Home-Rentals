@@ -8,6 +8,7 @@ import { BiTrash } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { getImageUrl } from "../utils/image";
+import { API_URL } from "../config/api";
 
 const EditListing = () => {
   const { listingId } = useParams();
@@ -54,7 +55,7 @@ const EditListing = () => {
   useEffect(() => {
     const getListing = async () => {
       try {
-        const res = await fetch(`http://localhost:8000/properties/${listingId}`);
+        const res = await fetch(`${API_URL}/properties/${listingId}`);
         const data = await res.json();
         setListing(data);
 
@@ -173,7 +174,7 @@ const EditListing = () => {
 
       photos.forEach((p) => form.append('listingPhotos', p));
 
-      const res = await fetch(`http://localhost:8000/properties/${listingId}`, {
+      const res = await fetch(`${API_URL}/properties/${listingId}`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${token}`,

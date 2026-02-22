@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Register.scss";
 import { setLogin } from "../redux/state";
 import { getImageUrl } from "../utils/image";
+import { API_URL } from "../config/api";
 
 const ProfilePage = () => {
   const user = useSelector((state) => state.user);
@@ -65,7 +66,7 @@ const ProfilePage = () => {
       formData.append('email', form.email);
       if (imageFile) formData.append('profileImage', imageFile);
 
-      const response = await fetch(`http://localhost:8000/users/${user._id}`, {
+      const response = await fetch(`${API_URL}/users/${user._id}`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${token}`,

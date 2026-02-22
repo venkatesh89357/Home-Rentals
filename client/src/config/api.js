@@ -1,0 +1,6 @@
+// API Configuration
+const apiBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
+export const API_URL = apiBaseUrl;
+
+export default API_URL;

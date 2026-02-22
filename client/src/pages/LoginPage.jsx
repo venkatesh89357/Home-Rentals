@@ -3,6 +3,7 @@ import "../styles/Login.scss";
 import { setLogin } from "../redux/state";
 import { useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
+import { API_URL } from "../config/api";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -20,7 +21,7 @@ const LoginPage = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8000/auth/login", {
+      const response = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

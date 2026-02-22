@@ -7,6 +7,7 @@ import {
   Favorite,
 } from "@mui/icons-material";
 import { getImageUrl } from "../utils/image";
+import { API_URL } from "../config/api";
 
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -58,7 +59,7 @@ const ListingCard = ({
     if (user?._id !== creator._id) {
       
     const response = await fetch(
-      `http://localhost:8000/users/${user?._id}/${listingId}`,
+      `${API_URL}/users/${user?._id}/${listingId}`,
       {
         method: "PATCH",
         header: {

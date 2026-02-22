@@ -4,6 +4,7 @@ import "react-date-range/dist/theme/default.css";
 import "react-date-range/dist/styles.css";
 import { facilities } from "../data";
 import { getImageUrl } from "../utils/image";
+import { API_URL } from "../config/api";
 
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -20,7 +21,7 @@ const ListingDetails = () => {
   const getListingDetails = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8000/properties/${listingId}`,
+        `${API_URL}/properties/${listingId}`,
         {
           method: "GET",
         }
@@ -101,7 +102,7 @@ const ListingDetails = () => {
         totalPrice: listing.price * dayCount,
       };
 
-      const response = await fetch("http://localhost:8000/bookings/create", {
+      const response = await fetch(`${API_URL}/bookings/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

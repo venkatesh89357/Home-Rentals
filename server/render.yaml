@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Render Build Script for Node.js Backend
+
+echo "Building MERN Home Rentals Backend..."
+
+# Install dependencies
+npm install
+
+echo "Backend build complete!"

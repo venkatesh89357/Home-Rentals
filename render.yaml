@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: mern-home-rentals-api
+    env: node
+    branch: main
+    root: server
+    buildCommand: npm install
+    startCommand: npm run prod
+    plan: free
